@@ -1,0 +1,1135 @@
+/* body::-webkit-scrollbar {
+    display: none;
+} */
+
+:root {
+    --space-s: 16px; /* Space Variables and Values */
+
+    --space-l-m: 16px;
+    --space-l-t: 32px;
+    --space-l-d: 48px;
+
+    --br: 16px;
+}
+
+:root {
+    --font-teko-hdg-btn: Teko; /* Font Family and Sizes, Font Variables and Values */
+    --font-lato-text: Lato;
+
+    --font-size-hdr-m: 2em;
+    --font-size-hdr-td: 3em;
+
+    --font-size-btn: 2em;
+    --font-size-movie-ctnt-ctnrs: 1.5em;
+}
+
+:root {
+    --color-dark-blue: #231651; /* Color Variables and Values */
+    --color-white: #FFFFFF;     /* Two Colors from Specification */
+ 
+    --color-medium-white: #cacaca; /* Custom Color Variables and Values  */
+    --color-light-gray: #b8b8b8;
+    --color-dark-gray: #2a2a2b;
+
+    --color-bgc: #252526;
+    --color-img-ctnr: #383839;
+}
+
+
+
+/* Desktop Device Wireframe - 1024px and Up*/
+@media screen and (min-width: 1024px) { /* Desktop Device */
+    h1, h2, button { 
+        font-family: var(--font-teko-hdg-btn); /* Heading and Button Imported Font Family */
+    }
+    
+    p {
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs); /* Paragpraph Font Family and Font Size */
+        color: var(--color-medium-white);
+        z-index: 1;
+    }
+    
+    button {
+        font-size: var(--font-size-btn); /* Button CSS Styling */
+        border: hidden;
+        border-radius: var(--br);
+        padding: var(--space-s);
+        color: var(--color-light-gray);
+        cursor: pointer; /* Cursor change to Pointer - Only for Desktop Devices */
+    }
+    
+    body {
+        margin: 0; /* Simple General Body Styling Format */
+        font-size: 11px;
+        background-color: var(--color-bgc);
+    }
+    
+    h2 {
+        font-size: var(--font-size-hdr-td); /* Heading 2 Font Size */
+        color: var(--color-white);
+    }
+    
+    .wrapper {
+        width: 900px;
+        margin: var(--space-l-d) auto; /* Wrapper CSS - The MAIN PARENT Container of */
+    }                                  /* the Whole Main Content - Acts as 'Container' Div Margin */
+
+    header {
+        width: 95.5%;
+        margin: var(--space-s) auto; /* Header CSS - Grid */
+        display: grid; 
+        grid-template-columns: 1fr 2fr 1fr;
+        padding: var(--space-s);
+        border-radius: var(--br);
+        background: linear-gradient(145deg, #251857, #201449);
+        box-shadow:  5px 5px 10px #150d31,
+                    -5px -5px 10px #311f71ca;
+    }
+    
+    header > h1 {
+        cursor: pointer;
+    }
+    
+    h1 {
+        width: fit-content;
+        margin: auto 0;
+        font-size: var(--font-size-hdr-td);
+        color: var(--color-white);
+    }
+    
+    nav {
+        margin: auto; /* Navigation Bar and Anchor Link Styling for Desktop Device */
+        height: fit-content;
+        text-align: center;
+        align-content: center;
+    }
+    
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs);
+        margin: var(--space-s);
+        color: var(--color-white);
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--color-white);
+        text-decoration-thickness: 2.4px;
+    }
+    
+    .search-btn {
+        justify-self: right; /* Search Button CSS */
+        width: 38%;
+        color: var(--color-dark-gray);
+        background: var(--color-white);
+        transition: 0.12s;
+    }
+
+    .search-btn:hover {
+        background: #ffffff; /* Search Button Hover CSS */
+        box-shadow: inset 5.2px 5.2px 20px #b5b5b5,
+                    inset -5px -5px 20px #ffffff;
+        transition: 0.12s;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-rows: repeat(6, auto); /* Container CSS - Parent Container for Movie Info */
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-l-d);
+        margin-inline: var(--space-l-d);
+        padding: 0 var(--space-l-d);
+    }
+    
+    
+    /* Movie Content/Container 1 */
+    .box-1 {
+        border-radius: var(--br); /* CSS Styling for Movie Content Container 1/Box 1 */  
+        grid-column: 1 / 3;       /* CSS Properties - Grid, Spacing, Border */
+        display: grid;
+        grid-template-rows: 20rem auto auto;
+        grid-template-columns: 2fr 1fr;
+        gap: var(--space-s);
+
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+    
+    .img-container-1 { /* Image Container and Image Styling for Movie 1 */
+        width: 100%;
+        display: flex;
+        object-fit: cover;
+        border-bottom: 1px solid var(--color-img-ctnr);
+        grid-column: 1 / 3;
+    }
+
+    .img-container-1 > img {
+        width: 100%;
+        display: flex;
+        object-fit: contain;
+    }
+    
+    .box-1 > h2 {
+        text-align: center; /* Movie Heading, Paragraph, and Button Styling for Movie 1 */
+        grid-column: 1 / 3; /* Mainly Spacing */
+        margin: 0;
+        align-self: center;
+        border-radius: var(--br);   
+    }
+    
+    .box-1 > p {
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+    .box-1 > button {
+        background: linear-gradient(145deg, #212122, #282829); /* "Watch Now" Movie Button 1 CSS */
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+        transition: 0.12s;
+    }
+
+    .box-1 > button:hover {
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435,
+                    inset 6px 6px 24px #1e1e1e,
+                    inset -5px -5px 24px #2c2c2e;
+        transition: 0.12s;
+    }
+    
+    
+    /* Movie Content/Container 2 */
+    .box-2 {
+        border-radius: var(--br); /* CSS Styling for Movie Content Container 3/Box 3 */
+        grid-column: 1 / 2;       /* CSS Properties - Grid, Spacing, Border */
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+        padding: var(--space-s);
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+    
+    .img-container-2 {
+        width: 100%; /* Image Container and Image Styling for Movie 2 */
+        display: flex;
+        border-radius: var(--br);
+        overflow: hidden;
+    }
+    
+    .img-container-2 > img {
+        width: 100%;
+        display: flex;
+        object-fit: cover;
+    }
+    
+    .box-2 > h2 {
+        text-align: center; /* Movie Heading and Paragraph Styling for Movie 2 */
+        margin: 0;          /* Mainly Spacing */
+    }
+    
+    .box-2 > p {
+        height: 134.4px; /* Height Set in Order to Align Both Text of Column Boxes (Box 2 & Box 3) */
+        margin: 0;       /* To align the Paragraphs from its Top "Justify" */
+    }
+
+    .box-2 > button {
+        background: linear-gradient(145deg, #212122, #282829);  /* "Watch Now" Movie Button 2 CSS */
+        box-shadow: 14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b;
+        transition: 0.12s;
+    }
+
+    .box-2 > button:hover {
+        box-shadow: 14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b,
+                    inset 6px 6px 24px #1e1e1e,
+                    inset -6px -6px 24px #2c2c2e;
+        transition: 0.12s;
+    }
+    
+    
+    /* Movie Content/Container 3 */
+    .box-3 {
+        border-radius: var(--br); /* CSS Styling for Movie Content Container 3/Box 3 */ 
+        grid-column: 2 / 3;       /* CSS Properties - Grid, Spacing, Border */
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+        padding: var(--space-s);
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+    
+    .img-container-3 {
+        width: 100%; /* Image Container and Image Styling for Movie 3 */
+        display: flex;
+        border-radius: var(--br);
+        overflow: hidden;
+    }
+    
+    .img-container-3 > img {
+        width: 100%;
+        display: flex;
+        object-fit: cover;
+    }
+    
+    .box-3 > h2 {
+        text-align: center; /* Movie Heading and Paragraph Styling for Movie 3 */
+        margin: 0;          /* Mainly Spacing */
+    }
+    
+    .box-3 > p {
+        height: 134.4px; /* Height Set in Order to Align Both Text of Column Boxes (Box 2 & Box 3) */
+        margin: 0;       /* To align the Paragraphs from its Top "Justify" */
+    }
+
+    .box-3 > button {
+        background: linear-gradient(145deg, #212122, #282829); /* "Watch Now" Movie Button 3 CSS */
+        box-shadow:  14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b;
+        transition: 0.12s;
+    }
+
+    .box-3 > button:hover {
+        box-shadow: 14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b,
+                    inset 6px 6px 24px #1e1e1e,
+                    inset -6px -6px 24px #2c2c2e;
+        transition: 0.12s;
+    }
+    
+    
+    /* Movie Content/Container 4 */
+    .box-4 {
+        border-radius: var(--br); /* CSS Styling for Movie Content Container 4/Box 4 */
+        grid-column: 1 / 3;       /* CSS Properties - Grid and Border */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+    
+    .img-container-4 {
+        padding: var(--space-s); /* Image Container and Image Styling for Movie 4 */
+        display: flex;
+        overflow: hidden;
+        border-right: 1px solid var(--color-img-ctnr);
+    }
+    
+    .img-container-4 > img {
+        width: 100%;
+        display: flex;
+        object-fit: cover;
+        border-radius:var(--br);
+    }
+    
+    .box-4 > h2 {
+        margin: 8px var(--space-s) 0; /* Texts and Button Styling CSS for Movie 4 */
+        grid-area: 1 / 2 / 2 / 3;     /* Use of Grid Area to Place Texts and Button in one Column */
+    }                                 /* Limited the Use of Containers to Adapt CSS w/ Other Wireframes */
+    
+    .box-4 > p {
+        height: 9em;
+        margin: 62px var(--space-s) 0;
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    
+    .box-4 > button {
+        height: 64.8px;
+        grid-area: 1 / 2 / 2 / 3;
+        margin: 0 var(--space-s) var(--space-s);
+        align-self: end;
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b;
+        transition: 0.12s;
+    }
+
+    .box-4 > button:hover {
+        box-shadow: 14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b,
+                    inset 6px 6px 24px #1e1e1e,
+                    inset -6px -6px 24px #2c2c2e;
+        transition: 0.12s;
+    }
+    
+    
+    /* Movie Content/Container 5 */
+    .box-5 {
+        border-radius: var(--br); /* CSS Styling for Movie Content Container 5/Box 5 */     
+        grid-column: 1 / 3;       /* CSS Properties - Grid and Border */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+    
+    .img-container-5 {
+        padding: var(--space-s); /* Image Container and Image Styling for Movie 5 */
+        display: flex;
+        overflow: hidden;
+        border-right: 1px solid var(--color-img-ctnr);
+    }
+    
+    .img-container-5 > img {
+        width: 100%;
+        display: flex;
+        object-fit: cover;
+        border-radius: var(--br);
+    }
+    
+    .box-5 > h2 {
+        margin: 8px var(--space-s) 0; /* Texts and Button Styling CSS for Movie 5 */
+        grid-area: 1 / 2 / 2 / 3;     /* Use of Grid Area to Place Texts and Button in one Column */
+    }                                 /* Limited the Use of Containers to Adapt CSS w/ Other Wireframes */
+    
+    .box-5 > p {
+        height: 9em;
+        margin: 62px var(--space-s) 0;
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    
+    .box-5 > button {
+        height: 64.8px;
+        grid-area: 1 / 2 / 2 / 3;
+        margin: 0 var(--space-s) var(--space-s);
+        align-self: end;
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b;
+    }
+
+    .box-5 > button:hover {
+        box-shadow: 14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b,
+                    inset 6px 6px 24px #1e1e1e,
+                    inset -6px -6px 24px #2c2c2e;
+        transition: 0.12s;
+    }
+    
+    
+    /* Movie Content/Container 6 */
+    .box-6 {
+        border-radius: var(--br); /* CSS Styling for Movie Content Container 6/Box 6 */
+        grid-column: 1 / 3;       /* CSS Properties - Grid and Border */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+    
+    .img-container-6 {
+        padding: var(--space-s); /* Image Container and Image Styling for Movie 6 */
+        display: flex;
+        overflow: hidden;
+        border-right: 1px solid var(--color-img-ctnr);
+    }
+    
+    .img-container-6 > img {
+        width: 100%;
+        display: flex;
+        object-fit: cover;
+        border-radius: var(--br);
+    }
+    
+    .box-6 > h2 {
+        margin: 8px var(--space-s) 0; /* Texts and Button Styling CSS for Movie 6 */
+        grid-area: 1 / 2 / 2 / 3;     /* Use of Grid Area to Place Texts and Button in one Column */
+    }                                 /* Limited the Use of Containers to Adapt CSS w/ Other Wireframes */
+    
+    .box-6 > p {
+        height: 9em;
+        margin: 62px var(--space-s) 0;
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    
+    .box-6 > button {
+        height: 64.8px;
+        grid-area: 1 / 2 / 2 / 3;
+        margin: 0 var(--space-s) var(--space-s);
+        align-self: end;
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b;
+    }
+
+    .box-6 > button:hover {
+        box-shadow: 14px 14px 27px #202021,
+                    -14px -14px 27px #2a2a2b,
+                    inset 6px 6px 24px #1e1e1e,
+                    inset -6px -6px 24px #2c2c2e;
+        transition: 0.12s;
+    }
+
+
+    /* Footer Styling - Additional HTML Segment */
+    footer {
+        width: 900px;
+        margin: var(--space-l-d) auto 0;
+        padding: var(--space-l-d);
+        border-top: 1px solid var(--color-img-ctnr);
+    }
+
+    footer p {
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs);
+        color: var(--color-medium-white);
+        text-align: center;
+        line-height: 24px;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: var(--color-white);
+    }
+}
+
+
+
+/* Tablet Device Viewport - 720px to 1024px */
+@media screen and (min-width: 720px) and (max-width: 1023px) { /* Tablet Device */
+    h1, h2, button { 
+        font-family: var(--font-teko-hdg-btn); /* Heading and Button Imported Font Family */
+    }
+    
+    p {
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs); /* Paragpraph Font Family and Font Size */
+        color: var(--color-medium-white);
+        z-index: 1;
+    }
+    
+    button {
+        font-size: var(--font-size-btn); /* Button CSS Styling */
+        border: 1px solid #000;
+        border-radius: var(--br);
+        padding: var(--space-s);
+        color: var(--color-light-gray);
+    }
+    
+    body {
+        margin: 0; /* Simple General Body Styling Format */
+        font-size: 11px;
+        background-color: var(--color-bgc);
+    }
+    
+    h2, p {
+        margin: 0;
+    } 
+
+    h2 {
+        font-size: var(--font-size-hdr-td); /* Heading 2 Font Size */
+        color: var(--color-white);
+    }
+    
+    .wrapper {
+        margin: var(--space-l-t) auto; /* Wrapper CSS - The MAIN PARENT Container of */
+    }                                  /* the Whole Main Content - Acts as 'Container' Div Margin */
+
+    header {
+        width: 93%;
+        margin: var(--space-s) auto; /* Header CSS - Grid */
+        display: grid; 
+        grid-template-columns: 1fr 2fr 1fr;
+        padding: var(--space-s);
+        border-radius: var(--br);
+        background: linear-gradient(145deg, #251857, #201449);
+        box-shadow:  5px 5px 10px #150d31,
+                    -5px -5px 10px #311f71ca;
+    }
+    
+    h1 {
+        margin: auto 0; /* Website Name */
+        font-size: var(--font-size-hdr-td);
+        color: var(--color-white);
+    }
+    
+    nav {
+        margin: auto; /* Navigation Bar and Anchor Link Styling for Tablet Device */
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        text-align: center;
+        align-content: center;
+    }
+    
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs);
+        color: var(--color-white);
+    }
+    
+    .search-btn {
+        justify-self: right; /* Search Button CSS */
+        color: var(--color-dark-gray);
+        background-color: var(--color-white);
+    }
+
+    .container {
+        display: grid; 
+        grid-template-rows: repeat(12, auto); /* Container CSS for Tablet Devices */
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-s);
+        margin: 0 var(--space-l-t);
+    }
+
+    .box {
+        border-radius: var(--br); /* Movie Content Container/Box CSS for Tablet Devices */
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: 1 / 5;
+
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+
+
+    /* Movie Content/Box 1 */
+    .img-container-1 {
+        display: flex; /* Image Container and Image CSS for Movie 1 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-1 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-1 > h2 {
+        line-height: var(--space-l-t); /* Movie Title, Synopsis, and Button CSS for Movie 1 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-1 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-1 > button {
+        border: hidden; /* No Hover Effect as this is for a Tablet Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+
+
+    /* Movie Content/Box 2 */
+    .img-container-2 {
+        display: flex; /* Image Container and Image CSS for Movie 2 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-2 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-2 > h2 {
+        line-height: var(--space-l-t); /* Movie Title, Synopsis, and Button CSS for Movie 2 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-2 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-2 > button {
+        border: hidden; /* No Hover Effect as this is for a Tablet Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+
+
+    /* Movie Content/Box 3 */
+    .box-3 {
+        grid-area: 5 / 1 / 9 / 2;
+    }
+
+    .img-container-3 {
+        display: flex; /* Image Container and Image CSS for Movie 3 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-3 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-3 > h2 {
+        line-height: var(--space-l-t); /* Movie Title, Synopsis, and Button CSS for Movie 3 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-3 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-3 > button {
+        border: hidden; /* No Hover Effect as this is for a Tablet Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+
+
+    /* Movie Content/Box 4 */
+    .box-4 {
+        grid-area: 5 / 2 / 9 / 3;
+    }
+
+    .img-container-4 {
+        display: flex; /* Image Container and Image CSS for Movie 4 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-4 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-4 > h2 {
+        line-height: var(--space-l-t); /* Movie Title, Synopsis, and Button CSS for Movie 4 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-4 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-4 > button {
+        border: hidden; /* No Hover Effect as this is for a Tablet Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+
+    /* Movie Content/Box 5 */
+    .box-5 {
+        grid-area: 9 / 1 / 13 / 2;
+    }
+
+    .img-container-5 {
+        display: flex; /* Image Container and Image CSS for Movie 5 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-5 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-5 > h2 {
+        line-height: var(--space-l-t); /* Movie Title, Synopsis, and Button CSS for Movie 5 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-5 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-5 > button {
+        border: hidden; /* No Hover Effect as this is for a Tablet Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+
+    /* Movie Content/Box 6 */
+    .box-6 {
+        grid-area: 9 / 2 / 13 / 3;
+    }
+
+    .img-container-6 {
+        display: flex; /* Image Container and Image CSS for Movie 6 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-6 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-6 > h2 {
+        line-height: var(--space-l-t); /* Movie Title, Synopsis, and Button CSS for Movie 6 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-6 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-6 > button {
+        border: hidden; /* No Hover Effect as this is for a Tablet Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+
+    /* Footer Styling - Additional HTML Segment */
+    footer {
+        margin: var(--space-l-t) auto 0;
+        padding: var(--space-l-t);
+        border-top: 1px solid var(--color-img-ctnr);
+    }
+
+    footer p {
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs);
+        color: var(--color-medium-white);
+        text-align: center;
+        line-height: 24px;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: var(--color-white);
+    }
+}
+
+
+
+/* Mobile Device Viewport - 360px to 720px */
+@media screen and (max-width: 719px) { /* Mobile Device */
+    h1, h2, button { 
+        font-family: var(--font-teko-hdg-btn); /* Heading and Button Imported Font Family */
+    }
+    
+    p {
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs); /* Paragpraph Font Family and Font Size */
+        color: var(--color-medium-white);
+        margin: 0;
+        z-index: 1;
+    }
+    
+    button {
+        font-size: var(--font-size-btn); /* Button CSS Styling */
+        border: 1px solid #000;
+        border-radius: var(--br);
+        padding: var(--space-s);
+        color: var(--color-light-gray);
+    }
+    
+    body {
+        margin: 0; /* Simple General Body Styling Format */
+        font-size: 11px;
+        background-color: var(--color-bgc);
+    }
+    
+    h2 {
+        font-size: var(--font-size-hdr-td); /* Heading 2 Font Size */
+        color: var(--color-white);
+        margin: 0;
+    }
+    
+    .wrapper {
+        margin: var(--space-l-m) auto; /* Wrapper CSS - The MAIN PARENT Container of */
+    }                                  /* the Whole Main Content - Acts as 'Container' Div Margin */
+
+    header {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); /* Header CSS - Grid */
+        padding: var(--space-s);
+        border-radius: 0 0 var(--br) var(--br);
+        background: linear-gradient(145deg, #251857, #201449);
+        box-shadow:  5px 5px 10px #150d31,
+                    -5px -5px 10px #311f71ca;
+    }
+    
+    h1 {
+        margin: auto 0; /* Website Name */
+        font-size: var(--font-size-hdr-m);
+        color: var(--color-white);
+    }
+    
+    nav {
+        display: none; /* Navigation Bar and Anchor Link Styling for Mobile Device */
+    }
+
+    .search-btn {
+        justify-self: right; /* Search Button CSS */
+        width: 62%;
+        color: var(--color-dark-gray);
+        background-color: var(--color-white);
+    }
+
+    .container {
+        display: grid; /* Container CSS for Mobile Devices */
+        grid-template-rows: repeat(24, auto);
+        gap: var(--space-s);
+    }
+
+    .box {
+        border: 1px solid var(--color-img-ctnr); /* Movie Content Container/Box CSS for Mobile Devices */
+        border-radius: var(--br);
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: 1 / 5;
+
+        background: linear-gradient(145deg, #282829, #212122);
+        box-shadow:  15px 15px 24px #161617,
+                    -13px -13px 24px #343435;
+    }
+
+
+    /* Movie Content/Box 1 */
+    .img-container-1 {
+        display: flex; /* Image Container and Image CSS for Movie 1 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-1 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-1 > h2 {
+        line-height: 32px; /* Movie Title, Synopsis, and Button CSS for Movie 1 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-1 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-1 > button {
+        border: hidden; /* No Hover Effect as this is for a Mobile Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+
+    /* Movie Content/Box 2 */
+    .box-2 {
+        grid-row: 5 / 9;
+    }
+
+    .img-container-2 {
+        display: flex; /* Image Container and Image CSS for Movie 2 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-2 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-2 > h2 {
+        line-height: 32px; /* Movie Title, Synopsis, and Button CSS for Movie 2 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-2 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-2 > button {
+        border: hidden; /* No Hover Effect as this is for a Mobile Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+
+    /* Movie Content/Box 3 */
+    .box-3 {
+        grid-row: 9 / 13;
+    }
+
+    .img-container-3 {
+        display: flex; /* Image Container and Image CSS for Movie 3 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-3 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-3 > h2 {
+        line-height: 32px; /* Movie Title, Synopsis, and Button CSS for Movie 3 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-3 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-3 > button {
+        border: hidden; /* No Hover Effect as this is for a Mobile Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+
+    /* Movie Content/Box 4 */
+    .box-4 {
+        grid-row: 13 / 17;
+    }
+
+    .img-container-4 {
+        display: flex; /* Image Container and Image CSS for Movie 4 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-4 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-4 > h2 {
+        line-height: 32px; /* Movie Title, Synopsis, and Button CSS for Movie 4 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-4 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-4 > button {
+        border: hidden; /* No Hover Effect as this is for a Mobile Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+
+    /* Movie Content/Box 5 */
+    .box-5 {
+        grid-row: 17 / 21;
+    }
+
+    .img-container-5 {
+        display: flex; /* Image Container and Image CSS for Movie 5 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-5 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-5 > h2 {
+        line-height: 32px; /* Movie Title, Synopsis, and Button CSS for Movie 5 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-5 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-5 > button {
+        border: hidden; /* No Hover Effect as this is for a Mobile Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+    
+    
+    /* Movie Content/Box 6 */
+    .box-6 {
+        grid-row: 21 / 25;
+    }
+
+    .img-container-6 {
+        display: flex; /* Image Container and Image CSS for Movie 6 */
+        object-fit: cover;
+        padding: var(--space-s);
+        border-bottom: 1px solid var(--color-img-ctnr);
+    }
+
+    .img-container-6 > img {
+        width: 100%;
+        border-radius: var(--br);
+    }
+
+    .box-6 > h2 {
+        line-height: 32px; /* Movie Title, Synopsis, and Button CSS for Movie 6 */
+        margin: 0 var(--space-s);
+    }
+
+    .box-6 > p {
+        margin: 0 var(--space-s);
+    }
+
+    .box-6 > button {
+        border: hidden; /* No Hover Effect as this is for a Mobile Device */
+        background: linear-gradient(145deg, #212122, #282829);
+        box-shadow:  5px 5px 24px #161617,
+                    -4px -4px 24px #343435;
+        margin: 0 var(--space-s) var(--space-s);
+    }
+
+
+    /* Footer Styling - Additional HTML Segment */
+    footer {
+        margin: var(--space-l-m) auto 0;
+        padding: var(--space-l-m);
+        border-top: 1px solid var(--color-img-ctnr);
+    }
+
+    footer p {
+        font-family: var(--font-lato-text);
+        font-size: var(--font-size-movie-ctnt-ctnrs);
+        color: var(--color-medium-white);
+        text-align: center;
+        line-height: 24px;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: var(--color-white);
+    }
+}
